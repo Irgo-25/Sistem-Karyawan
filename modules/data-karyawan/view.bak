@@ -1,0 +1,119 @@
+<?php
+// Panggil database
+include "database/function.php";
+// memanggil query data_karyawan
+$karyawan = view("SELECT * FROM data_karyawan")
+    or die('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
+//Fungsi Hapus Data
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Karyawan</title>
+</head>
+<?php
+// fungsi untuk menampilkan pesan
+// jika alert = "" (kosong)
+// tampilkan pesan "" (kosong)
+if (empty($_GET['alert'])) {
+    echo "";
+}
+
+// jika alert = 1
+// tampilkan pesan Sukses "Data barang baru berhasil disimpan"
+elseif ($_GET['alert'] == 1) {
+    echo "<div class='alert alert-success alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
+              Data barang baru berhasil disimpan.
+            </div>";
+}
+// jika alert = 2
+// tampilkan pesan Sukses "Data barang berhasil diubah"
+elseif ($_GET['alert'] == 2) {
+    echo "<div class='alert alert-success alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
+              Data barang berhasil diubah.
+            </div>";
+}
+// jika alert = 3
+// tampilkan pesan Sukses "Data barang berhasil dihapus"
+elseif ($_GET['alert'] == 3) {
+    echo "<div class='alert alert-success alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
+              Data barang berhasil dihapus.
+            </div>";
+}
+?>
+
+<body>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>Data Karyawan</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <!-- Button trigger modal -->
+            <a href="?page=add_karyawan&form=add" type="button" class="btn btn-primary">
+                <i class="fa fa-plus"></i>| Tambah
+            </a>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="table2" class="table table-bordered  table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>NIK</th>
+                                        <th>Nama</th>
+                                        <th>Umur</th>
+                                        <th>Departement</th>
+                                        <th>posisi</th>
+                                        <th>Alamat</th>
+                                        <th>Tanggal Masuk</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="border-dark">
+                                    <?php $No = 1; ?>
+                                    <?php foreach ($karyawan as $row) : ?>
+                                        <tr>
+                                            <td><?= $No ?></td>
+                                            <td><?= $row["nik"]; ?></td>
+                                            <td><?= $row["nama"]; ?></td>
+                                            <td><?= $row["umur"]; ?></td>
+                                            <td><?= $row["dept"]; ?></td>
+                                            <td><?= $row["posisi"]; ?></td>
+                                            <td><?= $row["alamat"]; ?></td>
+                                            <td><?= $row["tanggal_masuk"]; ?></td>
+                                            <td class="center" width="120">
+                                                <a href="?page=edit_karyawan&form=edit&nik=<?= $row["nik"]; ?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </a>
+                                                <a href="modules/data-karyawan/Proses.php?nik=<?= $row["nik"]; ?>" type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
+                                                    <i class=" fa-solid fa-trash-can"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php $No++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
