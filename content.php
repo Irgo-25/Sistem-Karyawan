@@ -15,4 +15,12 @@
   elseif ($_GET["page"] == "edit_karyawan") {
     include "modules/data-karyawan/edit.php";
   }
+  // menampilkan gaji pokok
+  elseif ($_GET["page"] == "gaji-pokok") {
+    include "modules/gaji-pokok/view.php";
+  }
+  // menampilkan gaji karyawan
+  elseif ($_GET["page"] == "gaji-karyawan") {
+    include "modules/gaji-karyawan/view.php";
+  }
   ?>
