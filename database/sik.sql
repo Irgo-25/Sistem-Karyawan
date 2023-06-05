@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 07:42 PM
+-- Generation Time: Jun 05, 2023 at 06:55 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -32,8 +32,8 @@ CREATE TABLE `data_karyawan` (
   `nik` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `umur` int(11) NOT NULL,
-  `dept` enum('Accounting','IT','HRD','Tricot','Laminated','Calender') NOT NULL,
-  `posisi` enum('Manager','Supervisor','Staff') NOT NULL,
+  `dept` varchar(200) NOT NULL,
+  `posisi` varchar(200) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -43,8 +43,13 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `posisi`, `alamat`, `tanggal_masuk`) VALUES
-(1, 2021122858, 'Irgo Satya Gemiwang', 19, 'IT', 'Staff', 'Kp. Slamet No 180', '2021-12-13'),
-(2, 1289117823, 'Triyanto', 20, 'IT', 'Staff', 'Grendem Campurejo', '2019-08-13');
+(49, 20221212, 'Satya', 22, 'GA', 'Supervisor', 'Slamet', '2023-04-15'),
+(54, 23213221, 'sasa', 22, 'IT', 'Supervisor', 'sds', '2023-06-04'),
+(60, 1212121214, 'Fajar', 22, 'Accounting', 'Manajer', 'Daci', '2023-06-07'),
+(62, 6666666, 'sano', 22, 'IT', 'Supervisor', 'Gajah', '2023-02-26'),
+(63, 88888888, 'dani', 22, 'IT', 'Supervisor', 'Gajah', '2023-01-29'),
+(79, 2147483647, 'Sari', 21, 'Accounting', 'Manajer', 'baris', '2023-05-14'),
+(80, 12365, 'Zeze', 23, 'Accounting', 'Manajer', 'Slamet', '2023-05-14');
 
 -- --------------------------------------------------------
 
@@ -55,7 +60,7 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `posi
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `password` varchar(100) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -63,7 +68,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`) VALUES
-(1, 'Irgo', 'rahasia123');
+(1, 'Irgo', '$2y$10$pummWqNODhw1YmawdgB/hugGVzMtueUbplB1THWEAOMilcMnlzc4W'),
+(4, 'Ragil', '$2y$10$SzWTE.nO.hHq994nXPLrjuQPu3oSmtg8jP9M3qo6bv28h8z/MKNUe'),
+(7, '', '$2y$10$Hvh4DGWSr5cvZ8/iXIdGnuwlaatwAYOe5WXD6MHJLhnzwbCNX59HG'),
+(8, 'gudang', '$2y$10$pce1TkIYhMJzl.eDb4.G9ejeELFCLacvJJLpJ/.f5PIQ576ty89D.'),
+(9, 'admin', '$2y$10$EL0iZRXdS8uVFvrfl8Z99eMsSLsEIkp7DZ7QVv5wAFhcFJV./0G/G'),
+(10, 'coba', '$2y$10$.5uF3EG/Vhb0FpmLV5qvvuv8tn7Fs35uV4SRx7fCwrEtWM5gF4dza'),
+(11, 'ika', '$2y$10$OFFkVaab7G0J46xBtgtXmOEYl9yucQmLesZDUawumq7lllB2NlE4y');
 
 --
 -- Indexes for dumped tables
@@ -90,13 +101,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
