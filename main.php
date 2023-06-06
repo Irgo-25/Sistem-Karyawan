@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NCF|SIK</title>
     <!-- Data Table -->
     <link rel="stylesheet" href="assets/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
@@ -68,7 +68,7 @@ session_start();
             <a href="#" class="brand-link">
                 <div class="row justify-content-around">
                     <div class="col-4">
-                        <img src="assets/img/logo.png" alt="NCF Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                        <img src="assets/img/logo.png" alt="NCFLogo" class="brand-image img-circle elevation-3" style="opacity: .8">
                     </div>
                     <div class="col-4">
                         <span class="brand-text font-weight-light">NCF</span>
@@ -97,7 +97,10 @@ session_start();
     <!-- Data Table JS -->
     <script src="assets/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="assets/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="assets/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="assets/datatables.net-searchpanes-bs4/js/searchPanes.bootstrap4.min.js"></script>
+    <script src="assets/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+    <!-- <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script> -->
     <!-- FontAwesome -->
     <script src="assets/fontawesome6/js/all.min.js"></script>
     <!-- JS AdminLTE -->
@@ -106,14 +109,13 @@ session_start();
     <script src="assets/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <!-- Panggil data table -->
     <script>
-        $("#table1").dataTable();
-        $('#table2').dataTable({
+        $("#table1").dataTable({
             "paging": true,
-            "lengthChange": false,
-            "searching": false,
+            "lengthChange": true,
+            "searching": true,
             "ordering": true,
             "info": true,
-            "autoWidth": false,
+            "autoWidth": true,
             "responsive": true,
         });
     </script>

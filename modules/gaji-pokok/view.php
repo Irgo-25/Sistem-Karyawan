@@ -16,7 +16,6 @@
             <button class="btn btn-primary justify-right">tambah</button>
         </div>
     </section>
-
 </body>
 
 </html>
