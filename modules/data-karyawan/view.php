@@ -79,10 +79,10 @@ $karyawan = view("SELECT * FROM data_karyawan")
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="table1" class="table table-bordered table-hover display responsive nowrap" style="width:100%">
+                            <table id="table1" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th></th>No</th>
+                                        <th>No</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
                                         <th>Umur</th>
