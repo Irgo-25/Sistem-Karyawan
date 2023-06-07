@@ -102,6 +102,57 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-sack-dollar fa-bounce"></i>
+          <p>
+            Laporan
+            <i class="fas fa-angle-left right"></i>
+          </p>
+        </a>
+        <ul class="nav nav-treeview">
+        <?php
+      }
+      // jika page gaji pokok di pilih
+      if ($_GET["page"] == "gaji-pokok") { ?>
+          <li class="nav-item">
+            <a href="?page=lap-data-karyawan" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Laporan Data Karyawam</p>
+            </a>
+          </li>
+        <?php
+      }
+      // Jika Gaji Pokok tidak di pilih
+      else { ?>
+          <li class="nav-item">
+            <a href="?page=lap-data-karyawan" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Laporan Data Karyawan</p>
+            </a>
+          </li>
+        <?php
+      }
+      // jika Gaji Karyawan di pilih
+      if ($_GET["page"] == "gaji-karyawan") { ?>
+          <li class="nav-item">
+            <a href="?page=lap-gakar" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Laporan Gaji Karyawan</p>
+            </a>
+          </li>
+        <?php
+      }
+      // jika Gaji Karyawan di pilih 
+      else { ?>
+          <li class="nav-item">
+            <a href="?page=lap-gakar" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p> Laporan Gaji Karyawan</p>
+            </a>
+          </li>
+        </ul>
+      </li>
     <?php
       }
     ?>

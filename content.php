@@ -22,5 +22,8 @@
   // menampilkan gaji karyawan
   elseif ($_GET["page"] == "gaji-karyawan") {
     include "modules/gaji-karyawan/view.php";
+    // menampilkan Laporan data karyawan
+  } elseif ($_GET["page"] == "lap-data-karyawan") {
+    include "modules/laporan/lap-data-karyawan.php";
   }
   ?>

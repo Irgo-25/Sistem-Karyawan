@@ -11,10 +11,13 @@
 <body>
     <section class="content-header">
         <h3>Gaji Karyawan</h3>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-
-            <button class="btn btn-primary justify-right">tambah</button>
+        <div class="col text-right">
+            <button class="btn btn-primary justify-right" name="btn-gaji-pokok">tambah</button>
         </div>
+    </section>
+
+    <section>
+
     </section>
 </body>
 

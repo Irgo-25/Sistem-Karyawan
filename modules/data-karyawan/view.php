@@ -66,9 +66,9 @@ $karyawan = view("SELECT * FROM data_karyawan")
         }
         ?>
         <h1>Data Karyawan</h1>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="col text-right">
             <!-- Button trigger modal -->
-            <a href="?page=add_karyawan&form=add" type="button" class="btn btn-primary btn-social pull-right" data-toggle="tooltip">
+            <a href="?page=add_karyawan&form=add" type="button" class="btn btn-primary" data-toggle="tooltip">
                 <span><i class="fa fa-plus"></i></span> Tambah
             </a>
         </div>
@@ -79,7 +79,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="table1" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
+                            <table id="table2" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>No</th>

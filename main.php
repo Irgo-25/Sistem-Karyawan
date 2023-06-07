@@ -11,11 +11,12 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NCF|SIK</title>
     <!-- Data Table -->
-    <link rel="stylesheet" href="assets/datatables.net-bs5/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="assets/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="assets/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="assets/datatables.net-searchpanes-bs4/css/searchPanes.bootstrap4.min.css">
-    <link rel="stylesheet" href="assets/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/DataTables/Buttons-2.3.6/css/buttons.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/DataTables/DataTables-1.13.4/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/DataTables/DateTime-1.4.1/css/dataTables.dateTime.min.css">
+    <link rel="stylesheet" href="assets/DataTables/Responsive-2.4.1/css/responsive.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/DataTables/SearchPanes-2.1.2/css/searchPanes.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/DataTables/Select-1.6.2/css/select.bootstrap5.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="assets/bootstrap/dist/css/bootstrap.min.css">
     <!-- adminLTE -->
@@ -95,12 +96,19 @@ session_start();
     <!-- JQuery -->
     <script src="assets/jquery/dist/jquery.min.js"></script>
     <!-- Data Table JS -->
-    <script src="assets/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="assets/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-    <script src="assets/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <script src="assets/datatables.net-searchpanes-bs4/js/searchPanes.bootstrap4.min.js"></script>
-    <script src="assets/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
-    <!-- <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="assets/DataTables/DataTables-1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="assets/DataTables/DataTables-1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/DataTables/Buttons-2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="assets/DataTables/DateTime-1.4.1/js/dataTables.dateTime.min.js"></script>
+    <script src="assets/DataTables/Responsive-2.4.1/js/dataTables.responsive.min.js"></script>
+    <script src="assets/DataTables/SearchPanes-2.1.2/js/dataTables.searchPanes.min.js"></script>
+    <script src="assets/DataTables/Select-1.6.2/js/select.bootstrap5.min.js"></script>
+    <!-- DataTables Export -->
+    <script src="assets/DataTables/Buttons-2.3.6/js/buttons.print.min.js"></script>
+    <script src="assets/DataTables/Buttons-2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+
     <!-- FontAwesome -->
     <script src="assets/fontawesome6/js/all.min.js"></script>
     <!-- JS AdminLTE -->
@@ -111,12 +119,30 @@ session_start();
     <script>
         $("#table1").dataTable({
             "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": false,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        })
+        $('#table2').DataTable({
+            "paging": true,
             "lengthChange": true,
             "searching": true,
             "ordering": true,
             "info": true,
             "autoWidth": true,
             "responsive": true,
+        });
+        $(document).ready(function() {
+            $('#table3').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'excelHtml5',
+                    'pdfHtml5'
+                ]
+            });
         });
     </script>
 </body>
