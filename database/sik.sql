@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2023 at 06:55 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- Generation Time: Jun 07, 2023 at 06:54 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,7 +49,13 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `posi
 (62, 6666666, 'sano', 22, 'IT', 'Supervisor', 'Gajah', '2023-02-26'),
 (63, 88888888, 'dani', 22, 'IT', 'Supervisor', 'Gajah', '2023-01-29'),
 (79, 2147483647, 'Sari', 21, 'Accounting', 'Manajer', 'baris', '2023-05-14'),
-(80, 12365, 'Zeze', 23, 'Accounting', 'Manajer', 'Slamet', '2023-05-14');
+(80, 12365, 'Zeze', 23, 'Accounting', 'Manajer', 'Slamet', '2023-05-14'),
+(90, 5254546, 'Babu', 23, 'IT', 'Supervisor', 'Gajah', '2023-03-15'),
+(91, 5454639, 'Caca', 22, 'IT', 'Supervisor', 'Gajah', '2023-04-05'),
+(92, 1236549, 'Gisel', 22, 'GA', 'Supervisor', 'baris', '2023-02-08'),
+(93, 20232563, 'Dandy', 52, 'Accounting', 'Manajer', 'baris', '2023-04-12'),
+(94, 20201363, 'stria', 25, 'Accounting', 'Manajer', 'baris', '2023-04-05'),
+(95, 7845123, 'David Ca', 24, 'IT', 'Manajer', 'Slamet', '2023-03-29');
 
 -- --------------------------------------------------------
 
@@ -101,7 +107,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `user`
