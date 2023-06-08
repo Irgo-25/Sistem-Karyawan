@@ -8,11 +8,11 @@
     include "modules/data-karyawan/view.php";
   }
   // menampilkan form tambah karyawan
-  elseif ($_GET["page"] == "add_karyawan") {
+  elseif ($_GET["page"] == "add-karyawan") {
     include "modules/data-karyawan/form.php";
   }
   // menampilkan form edit karyawan
-  elseif ($_GET["page"] == "edit_karyawan") {
+  elseif ($_GET["page"] == "edit-karyawan") {
     include "modules/data-karyawan/edit.php";
   }
   // menampilkan gaji pokok
