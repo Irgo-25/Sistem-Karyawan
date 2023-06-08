@@ -64,6 +64,15 @@ $karyawan = view("SELECT * FROM data_karyawan")
               Data Karyawan berhasil dihapus.
             </div>";
         }
+        // jika alert = 3
+        // tampilkan pesan Sukses "Data Karyawan berhasil dihapus"
+        elseif ($_GET['alert'] == 4) {
+            echo "<div class='alert alert-danger alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
+              Data Karyawan gagal ditambahkan.
+            </div>";
+        }
         ?>
         <h1>Data Karyawan</h1>
         <div class="col text-right">

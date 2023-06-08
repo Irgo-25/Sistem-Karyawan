@@ -25,10 +25,11 @@
           </p>
         </a>
       </li>
+
     <?php
     }
     // jika menu Data Karyawan dipilih, menu Data Karyawam aktif
-    if ($_GET["page"] == "data-karyawan") { ?>
+    if ($_GET["page"] == "data-karyawan" || $_GET["page"] == "add_karyawan") { ?>
       <li class="nav-item">
         <a href="?page=data-karyawan" class="nav-link">
           <i class="fa fa-address-card"></i>
@@ -37,6 +38,7 @@
           </p>
         </a>
       </li>
+
     <?php
     }
     // jika tidak, menu home tidak aktif
@@ -49,6 +51,7 @@
           </p>
         </a>
       </li>
+
     <?php
     } { ?>
       <li class="nav-item">
@@ -102,9 +105,13 @@
           </li>
         </ul>
       </li>
+    <?php
+      }
+    ?>
+    <?php { ?>
       <li class="nav-item">
         <a href="#" class="nav-link">
-          <i class="fa-solid fa-sack-dollar fa-bounce"></i>
+          <i class="fa-solid fa-folder"></i>
           <p>
             Laporan
             <i class="fas fa-angle-left right"></i>

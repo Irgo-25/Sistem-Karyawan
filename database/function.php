@@ -13,6 +13,7 @@ function view($karyawan)
     }
     return $rows;
 }
+
 function add($data)
 {
     global $conn;

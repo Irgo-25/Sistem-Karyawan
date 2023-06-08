@@ -6,16 +6,24 @@
         if (add($_POST) > 0) {
 
             echo
-            "<script>
-            alert('Data Berhasil di tambahkan');
-            document.location.href = 'main.php?page=data-karyawan';
-            </script>";
+            "
+           <script>
+            window.setTimeout(function() {
+                window.location.reload()
+                document.location.href = 'main.php?page=data-karyawan&alert=1';
+                }, 1000);
+            </script>
+            ";
         } else {
             echo
-            "<script>
-            alert('Data gagal di tambahkan');
-            document.location.href = 'main.php?page=data-karyawan';
-            </script>";
+            "
+           <script>
+            window.setTimeout(function() {
+                window.location.reload()
+                document.location.href = 'main.php?page=data-karyawan&alert=4';
+                }, 1000);
+            </script>
+            ";
             mysqli_error($conn);
         }
     }
