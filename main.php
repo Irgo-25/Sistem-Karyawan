@@ -1,7 +1,7 @@
 <?php
 session_start();
 // mengecek jika kalau user sudah login
-if (isset($_SESSION["login"])) {
+if (!isset($_SESSION["login"])) {
     header("location:index.php");
     exit;
 }

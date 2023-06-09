@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (isset($_SESSION["login"])) {
+    header("location: main.php?page=beranda");
+    exit;
+}
 require_once 'login-register-check.php';
 if (isset($_POST["login"])) {
     $username = $_POST["username"];
@@ -10,7 +16,10 @@ if (isset($_POST["login"])) {
         // cek password
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
+            // Cek Session
+            $_SESSION["login"] = true;
             header("Location: main.php?page=beranda");
+            exit;
         }
     }
     $error = true;
