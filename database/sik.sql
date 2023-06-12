@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2023 at 06:54 PM
+-- Generation Time: Jun 12, 2023 at 05:11 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `data_karyawan` (
-  `id_karyawan` int(11) NOT NULL,
+  `id_karyawan` int(20) NOT NULL,
   `nik` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `umur` int(11) NOT NULL,
@@ -55,7 +55,34 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `posi
 (92, 1236549, 'Gisel', 22, 'GA', 'Supervisor', 'baris', '2023-02-08'),
 (93, 20232563, 'Dandy', 52, 'Accounting', 'Manajer', 'baris', '2023-04-12'),
 (94, 20201363, 'stria', 25, 'Accounting', 'Manajer', 'baris', '2023-04-05'),
-(95, 7845123, 'David Ca', 24, 'IT', 'Manajer', 'Slamet', '2023-03-29');
+(95, 7845123, 'David Ca', 24, 'IT', 'Manajer', 'Slamet', '2023-03-29'),
+(96, 6366532, 'Fada', 25, 'IT', 'Supervisor', 'Gajah', '2023-02-27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gaji_karyawan`
+--
+
+CREATE TABLE `gaji_karyawan` (
+  `id_karyawan` int(20) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `gaji_pokok` int(65) NOT NULL,
+  `tunjangan` int(65) NOT NULL,
+  `total_gaji` int(65) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gaji_pokok`
+--
+
+CREATE TABLE `gaji_pokok` (
+  `id_gaji` int(25) NOT NULL,
+  `gaji_pokok` int(25) NOT NULL,
+  `jabatan` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -94,6 +121,20 @@ ALTER TABLE `data_karyawan`
   ADD UNIQUE KEY `NIK` (`nik`);
 
 --
+-- Indexes for table `gaji_karyawan`
+--
+ALTER TABLE `gaji_karyawan`
+  ADD PRIMARY KEY (`id_karyawan`),
+  ADD UNIQUE KEY `gaji_pokok` (`gaji_pokok`);
+
+--
+-- Indexes for table `gaji_pokok`
+--
+ALTER TABLE `gaji_pokok`
+  ADD PRIMARY KEY (`id_gaji`),
+  ADD UNIQUE KEY `gaji_pokok` (`gaji_pokok`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -107,7 +148,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
+  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `user`

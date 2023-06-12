@@ -80,7 +80,7 @@
           <ul class="nav nav-treeview">
             <?php
             // jika page gaji pokok di pilih
-            if ($_GET["page"] == "gaji-pokok") { ?>
+            if ($_GET["page"] == "gaji-pokok" || $_GET["page"] == "add-gapok") { ?>
               <li class="nav-item">
                 <a href="?page=gaji-pokok" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

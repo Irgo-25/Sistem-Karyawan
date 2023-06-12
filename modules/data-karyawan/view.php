@@ -1,11 +1,9 @@
 <?php
 // Panggil database
-include "database/function.php";
+require "database/function.php";
 // memanggil query data_karyawan
 $karyawan = view("SELECT * FROM data_karyawan")
     or die('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
-//Fungsi Hapus Data
-
 ?>
 
 <!DOCTYPE html>
@@ -64,8 +62,8 @@ $karyawan = view("SELECT * FROM data_karyawan")
               Data Karyawan berhasil dihapus.
             </div>";
         }
-        // jika alert = 3
-        // tampilkan pesan Sukses "Data Karyawan berhasil dihapus"
+        // jika alert = 4
+        // tampilkan pesan Sukses "Data Karyawan gagal disimpan"
         elseif ($_GET['alert'] == 4) {
             echo "<div class='alert alert-danger alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
@@ -96,7 +94,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                         <th>Nama</th>
                                         <th>Umur</th>
                                         <th>Departement</th>
-                                        <th>posisi</th>
+                                        <th>Jabatan</th>
                                         <th>Alamat</th>
                                         <th>Tanggal Masuk</th>
                                         <th></th>
@@ -111,7 +109,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                             <td><?= $row["nama"]; ?></td>
                                             <td><?= $row["umur"]; ?></td>
                                             <td><?= $row["dept"]; ?></td>
-                                            <td><?= $row["posisi"]; ?></td>
+                                            <td><?= $row["jabatan"]; ?></td>
                                             <td><?= $row["alamat"]; ?></td>
                                             <td><?= $row["tanggal_masuk"]; ?></td>
                                             <td class="center" width="120">

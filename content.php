@@ -19,6 +19,10 @@
   elseif ($_GET["page"] == "gaji-pokok") {
     include "modules/gaji-pokok/view.php";
   }
+  // menampilkan form gaji pokok
+  elseif ($_GET["page"] == "add-gapok") {
+    include "modules/gaji-pokok/form.php";
+  }
   // menampilkan gaji karyawan
   elseif ($_GET["page"] == "gaji-karyawan") {
     include "modules/gaji-karyawan/view.php";
