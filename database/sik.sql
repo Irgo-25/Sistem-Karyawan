@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 05:11 PM
+-- Generation Time: Jun 12, 2023 at 07:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,7 +33,7 @@ CREATE TABLE `data_karyawan` (
   `nama` varchar(100) NOT NULL,
   `umur` int(11) NOT NULL,
   `dept` varchar(200) NOT NULL,
-  `posisi` varchar(200) NOT NULL,
+  `jabatan` varchar(200) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `tanggal_masuk` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -42,7 +42,7 @@ CREATE TABLE `data_karyawan` (
 -- Dumping data for table `data_karyawan`
 --
 
-INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `posisi`, `alamat`, `tanggal_masuk`) VALUES
+INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jabatan`, `alamat`, `tanggal_masuk`) VALUES
 (49, 20221212, 'Satya', 22, 'GA', 'Supervisor', 'Slamet', '2023-04-15'),
 (54, 23213221, 'sasa', 22, 'IT', 'Supervisor', 'sds', '2023-06-04'),
 (60, 1212121214, 'Fajar', 22, 'Accounting', 'Manajer', 'Daci', '2023-06-07'),
@@ -80,9 +80,22 @@ CREATE TABLE `gaji_karyawan` (
 
 CREATE TABLE `gaji_pokok` (
   `id_gaji` int(25) NOT NULL,
-  `gaji_pokok` int(25) NOT NULL,
+  `gaji_utama` int(25) NOT NULL,
   `jabatan` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `gaji_pokok`
+--
+
+INSERT INTO `gaji_pokok` (`id_gaji`, `gaji_utama`, `jabatan`) VALUES
+(5, 0, 'Manajer'),
+(8, 0, 'Supervisor'),
+(11, 0, 'Manajer'),
+(12, 0, 'Staff'),
+(13, 0, 'Manajer'),
+(14, 3000000, 'staff'),
+(15, 7000000, 'Manajer');
 
 -- --------------------------------------------------------
 
@@ -131,8 +144,7 @@ ALTER TABLE `gaji_karyawan`
 -- Indexes for table `gaji_pokok`
 --
 ALTER TABLE `gaji_pokok`
-  ADD PRIMARY KEY (`id_gaji`),
-  ADD UNIQUE KEY `gaji_pokok` (`gaji_pokok`);
+  ADD PRIMARY KEY (`id_gaji`);
 
 --
 -- Indexes for table `user`
@@ -149,6 +161,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `data_karyawan`
   MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
+--
+-- AUTO_INCREMENT for table `gaji_pokok`
+--
+ALTER TABLE `gaji_pokok`
+  MODIFY `id_gaji` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user`
