@@ -56,7 +56,7 @@ function edit($data)
                 nama = '$fullname',
                 umur = '$age',
                 dept = '$dept',
-                posisi = '$jabatan',
+                jabatan = '$jabatan',
                 alamat = '$address',
                 tanggal_masuk = '$entryDate'
                 WHERE id_karyawan = $id 

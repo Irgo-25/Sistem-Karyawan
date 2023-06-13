@@ -11,14 +11,12 @@ if (isset($_POST["submit"])) {
     if (edit($_POST) > 0) {
         echo
         "<script>
-            alert('Data Berhasil di Ubah');
-            document.location.href = 'main.php?page=data-karyawan';
+            document.location.href = 'main.php?page=data-karyawan&alert=2';
             </script>";
     } else {
         echo
         "<script>
-            alert('Data gagal di Ubah ');
-            document.location.href = 'main.php?page=data-karyawan';
+            document.location.href = 'main.php?page=data-karyawan&alert=4';
             </script>";
         mysqli_error($conn);
     }
@@ -71,9 +69,9 @@ if (isset($_POST["submit"])) {
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="posisi">Posisi</label>
-                                <select class="form-select" name="posisi" id="posisi" aria-label=" Floating label disabled select example">
-                                    <option value="<?= $data['posisi']; ?>"><?= $data['posisi']; ?></option>
+                                <label for="jabatan">jabatan</label>
+                                <select class="form-select" name="jabatan" id="jabatan" aria-label=" Floating label disabled select example">
+                                    <option value="<?= $data['jabatan']; ?>"><?= $data['jabatan']; ?></option>
                                     <option value="Manajer">Manajer</option>
                                     <option value="Supervisor">Supervisor</option>
                                     <option value="Staff">Staff</option>

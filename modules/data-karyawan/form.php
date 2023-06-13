@@ -8,20 +8,14 @@
             echo
             "
            <script>
-            window.setTimeout(function() {
-                window.location.reload()
                 document.location.href = 'main.php?page=data-karyawan&alert=1';
-                }, 1000);
             </script>
             ";
         } else {
             echo
             "
            <script>
-            window.setTimeout(function() {
-                window.location.reload()
                 document.location.href = 'main.php?page=data-karyawan&alert=4';
-                }, 1000);
             </script>
             ";
             mysqli_error($conn);

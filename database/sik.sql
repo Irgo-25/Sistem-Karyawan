@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2023 at 07:35 PM
+-- Generation Time: Jun 13, 2023 at 06:30 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,8 +43,8 @@ CREATE TABLE `data_karyawan` (
 --
 
 INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jabatan`, `alamat`, `tanggal_masuk`) VALUES
-(49, 20221212, 'Satya', 22, 'GA', 'Supervisor', 'Slamet', '2023-04-15'),
-(54, 23213221, 'sasa', 22, 'IT', 'Supervisor', 'sds', '2023-06-04'),
+(49, 20221212, 'Satya fd', 22, 'GA', 'Supervisor', 'Slamet', '2023-04-15'),
+(54, 23213221, 'sasasi', 22, 'IT', 'Supervisor', 'sds', '2023-06-04'),
 (60, 1212121214, 'Fajar', 22, 'Accounting', 'Manajer', 'Daci', '2023-06-07'),
 (62, 6666666, 'sano', 22, 'IT', 'Supervisor', 'Gajah', '2023-02-26'),
 (63, 88888888, 'dani', 22, 'IT', 'Supervisor', 'Gajah', '2023-01-29'),
@@ -55,8 +55,7 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jaba
 (92, 1236549, 'Gisel', 22, 'GA', 'Supervisor', 'baris', '2023-02-08'),
 (93, 20232563, 'Dandy', 52, 'Accounting', 'Manajer', 'baris', '2023-04-12'),
 (94, 20201363, 'stria', 25, 'Accounting', 'Manajer', 'baris', '2023-04-05'),
-(95, 7845123, 'David Ca', 24, 'IT', 'Manajer', 'Slamet', '2023-03-29'),
-(96, 6366532, 'Fada', 25, 'IT', 'Supervisor', 'Gajah', '2023-02-27');
+(97, 4544565, 'trai', 23, 'Accounting', '', 'Gajah', '2023-03-14');
 
 -- --------------------------------------------------------
 
@@ -95,7 +94,8 @@ INSERT INTO `gaji_pokok` (`id_gaji`, `gaji_utama`, `jabatan`) VALUES
 (12, 0, 'Staff'),
 (13, 0, 'Manajer'),
 (14, 3000000, 'staff'),
-(15, 7000000, 'Manajer');
+(15, 7000000, 'Manajer'),
+(16, 8000000, 'Manajer');
 
 -- --------------------------------------------------------
 
@@ -160,13 +160,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `gaji_pokok`
 --
 ALTER TABLE `gaji_pokok`
-  MODIFY `id_gaji` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_gaji` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
