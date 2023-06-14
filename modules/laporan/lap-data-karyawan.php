@@ -32,7 +32,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                     <th>Nama</th>
                                     <th>Umur</th>
                                     <th>Departement</th>
-                                    <th>posisi</th>
+                                    <th>Jabatan</th>
                                     <th>Alamat</th>
                                     <th>Tanggal Masuk</th>
                                 </tr>
@@ -46,7 +46,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                         <td><?= $row["nama"]; ?></td>
                                         <td><?= $row["umur"]; ?></td>
                                         <td><?= $row["dept"]; ?></td>
-                                        <td><?= $row["posisi"]; ?></td>
+                                        <td><?= $row["jabatan"]; ?></td>
                                         <td><?= $row["alamat"]; ?></td>
                                         <td><?= $row["tanggal_masuk"]; ?></td>
                                     </tr>

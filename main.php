@@ -129,6 +129,7 @@ if (!isset($_SESSION["login"])) {
         });
         $(document).ready(function() {
             $('#table3').DataTable({
+                "responsive": true,
                 dom: 'Bfrtip',
                 buttons: [
                     'excelHtml5',
