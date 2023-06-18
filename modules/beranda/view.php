@@ -23,7 +23,7 @@
         <div class="col-md-3 col-xs-8">
           <!-- small box -->
           <div class="small-box bg-info">
-            <a href="?page=data-karyawan">
+            <a href="?page=data_karyawan">
               <div class="inner">
                 <i class="fa fa-address-card fa-2xl"></i>
                 <h3></h3>
@@ -31,7 +31,7 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="?page=add_karyawan" class="small-box-footer">Entry Data <i class="fas fa-plus"></i></a>
             </a>
           </div>
         </div>

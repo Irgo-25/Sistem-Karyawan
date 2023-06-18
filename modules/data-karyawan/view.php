@@ -75,7 +75,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
         <h1>Data Karyawan</h1>
         <div class="col text-right">
             <!-- Button trigger modal -->
-            <a href="?page=add-karyawan&form=add" type="button" class="btn btn-primary" data-toggle="tooltip">
+            <a href="?page=add_karyawan&form=add" type="button" class="btn btn-primary" data-toggle="tooltip">
                 <span><i class="fa fa-plus"></i></span> Tambah
             </a>
         </div>
@@ -114,7 +114,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                             <td><?= $row["tanggal_masuk"]; ?></td>
                                             <td class="center" width="120">
                                                 <!-- Tombol Edit -->
-                                                <a href="?page=edit-karyawan&form=edit&nik=<?= $row["nik"]; ?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
+                                                <a href="?page=edit_karyawan&form=edit&nik=<?= $row["nik"]; ?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>
                                                 <!-- Tombol Hapus -->

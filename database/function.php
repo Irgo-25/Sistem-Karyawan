@@ -85,8 +85,29 @@ function addGapok($salary)
     $pokok = ($salary["gaji_utama"]);
     $jabatan = htmlspecialchars($salary["jabatan"]);
 
-    $gapok2 = "INSERT INTO gaji_pokok VALUES('', '$pokok','$jabatan')";
+    $add_gapok = "INSERT INTO gaji_pokok VALUES('', '$pokok','$jabatan')";
 
-    mysqli_query($conn, $gapok2);
+    mysqli_query($conn, $add_gapok);
     return mysqli_affected_rows($conn);
+}
+function editSalary($salary)
+{
+    global $conn;
+    // memanggil data gaji pokok dari database
+    $id_gapok = htmlspecialchars($salary["id_gapok"]);
+    $main_salary = htmlspecialchars($salary["gaji_utama"]);
+    $jabatan = htmlspecialchars($salary["jabatan"]);
+    // update data ke database
+    $update_salary = "UPDATE gaji_pokok SET
+                     gaji_utama = '$main_salary',
+                    jabatan = '$jabatan'
+                    WHERE id_gapok = $id_gapok
+                    ";
+    mysqli_query($conn, $update_salary);
+    return mysqli_affected_rows($conn);
+}
+function deleteSalary($id_gapok)
+{
+    global $conn;
+    mysqli_query($conn, "DELETE FROM gaji_pokok WHERE id_gapok = $id_gapok");
 }

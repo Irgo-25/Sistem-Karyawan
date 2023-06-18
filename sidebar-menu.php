@@ -47,9 +47,9 @@
         <?php
         // fungsi untuk pengecekan menu aktif
         // jika menu beranda dipilih, menu beranda aktif
-        if ($_GET["page"] == "data-karyawan" || $_GET["page"] == "add-karyawan") { ?>
+        if ($_GET["page"] == "data_karyawan" || $_GET["page"] == "add_karyawan") { ?>
           <li class="nav-item">
-            <a href="?page=data-karyawan" class="nav-link">
+            <a href="?page=data_karyawan" class="nav-link">
               <i class="fa fa-address-card"></i>
               <p>
                 Data Karyawan
@@ -61,7 +61,7 @@
         // jika tidak, menu home tidak aktif
         else { ?>
           <li class="nav-item">
-            <a href="?page=data-karyawan" class="nav-link">
+            <a href="?page=data_karyawan" class="nav-link">
               <i class="fa fa-address-card"></i>
               <p>
                 Data Karyawan
@@ -80,9 +80,9 @@
           <ul class="nav nav-treeview">
             <?php
             // jika page gaji pokok di pilih
-            if ($_GET["page"] == "gaji-pokok" || $_GET["page"] == "add-gapok") { ?>
+            if ($_GET["page"] == "gaji_pokok" || $_GET["page"] == "add_gapok") { ?>
               <li class="nav-item">
-                <a href="?page=gaji-pokok" class="nav-link">
+                <a href="?page=gaji_pokok" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gaji Pokok</p>
                 </a>
@@ -92,7 +92,7 @@
             // jika tidak, menu home tidak aktif
             else { ?>
               <li class="nav-item">
-                <a href="?page=gaji-pokok" class="nav-link">
+                <a href="?page=gaji_pokok" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gaji Pokok</p>
                 </a>
@@ -100,9 +100,9 @@
             <?php } ?>
             <?php
             // jika Gaji Karyawan di pilih
-            if ($_GET["page"] == "gaji-karyawan") { ?>
+            if ($_GET["page"] == "gaji_karyawan") { ?>
               <li class="nav-item">
-                <a href="?page=gaji-karyawan" class="nav-link">
+                <a href="?page=gaji_karyawan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gaji Karyawan</p>
                 </a>
@@ -112,7 +112,7 @@
             // jika tidak, menu home tidak aktif
             else { ?>
               <li class="nav-item">
-                <a href="?page=gaji-karyawan" class="nav-link">
+                <a href="?page=gaji_karyawan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Gaji Karyawan</p>
                 </a>
@@ -131,7 +131,7 @@
           <ul class="nav nav-treeview">
             <?php
             // jika page gaji pokok di pilih
-            if ($_GET["page"] == "lap-data-karyawan") { ?>
+            if ($_GET["page"] == "lap_data_karyawan") { ?>
               <li class="nav-item">
                 <a href="?page=lap-data-karyawan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -143,7 +143,7 @@
             // jika tidak, menu home tidak aktif
             else { ?>
               <li class="nav-item">
-                <a href="?page=lap-data-karyawan" class="nav-link">
+                <a href="?page=lap_data_karyawan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Laporan Data Karyawam</p>
                 </a>

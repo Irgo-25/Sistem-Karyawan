@@ -31,31 +31,37 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
             echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
-              Data Karyawan baru berhasil disimpan.
+              Gaji Pokok berhasil disimpan.
             </div>";
         }
         // jika alert = 2
-        // tampilkan pesan Sukses "Data Karyawan berhasil diubah"
+        // tampilkan pesan Sukses "Gaji Pokok berhasil diubah"
         elseif ($_GET['alert'] == 2) {
             echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
-              Data Karyawan berhasil diubah.
+              Gaji Pokok berhasil diubah.
             </div>";
         }
         // jika alert = 3
-        // tampilkan pesan Sukses "Data Karyawan berhasil dihapus"
+        // tampilkan pesan Sukses "Gaji Pokok berhasil dihapus"
         elseif ($_GET['alert'] == 3) {
             echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
-              Data Karyawan berhasil dihapus.
+              Gaji Pokok berhasil dihapus.
+            </div>";
+        } elseif ($_GET['alert'] == 4) {
+            echo "<div class='alert alert-success alert-dismissable'>
+              <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+              <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
+              Gaji Pokok Gagal di tambah.
             </div>";
         }
         ?>
         <h3>Gaji Pokok</h3>
         <div class="col text-right">
-            <a href="?page=add-gapok" class="btn btn-primary justify-right" name="btn-gaji-pokok">tambah</a>
+            <a href="?page=add_gapok" class="btn btn-primary justify-right" name="btn-gaji-pokok">tambah</a>
         </div>
     </section>
 
@@ -68,8 +74,8 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
                             <table id="table1" class="table table-bordered ">
                                 <thead>
                                     <tr>
-                                        <th>Gaji Pokok</th>
-                                        <th>Jabatan</th>
+                                        <th style="width: 40%; text-align:center;">Gaji Pokok</th>
+                                        <th style="width: 40%; text-align:center;">Jabatan</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -78,7 +84,14 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
                                         <tr>
                                             <td>Rp. <?= $gp["gaji_utama"]; ?></td>
                                             <td><?= $gp["jabatan"]; ?></td>
-                                            <td></td>
+                                            <td>
+                                                <a href="?page=edit_gapok&form=edit&id_gapok=<?= $gp["id_gapok"]; ?>" type="button" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </a>
+                                                <a href="modules/gaji-pokok/proses.php?id_gapok=<?= $gp["id_gapok"]; ?>" type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content" onclick="alert('Apakah anda yakin ingin menghapusnya?')">
+                                                    <i class=" fa-solid fa-trash-can"></i>
+                                                </a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

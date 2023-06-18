@@ -12,7 +12,7 @@
     <section class="content-header">
         <h3>Gaji Karyawan</h3>
         <div class="col text-right">
-            <button class="btn btn-primary justify-right" name="btn-gaji-pokok">tambah</button>
+            <button class="btn btn-primary justify-right" name="btn-gaji-karyawan">tambah</button>
         </div>
     </section>
 

@@ -1,26 +1,20 @@
 <?php
 include "database/function.php";
+$id_gapok = $_GET["id_gapok"];
+
+$gp = view("SELECT * FROM gaji_pokok WHERE id_gapok=$id_gapok")[0];
+
 if (isset($_POST["submit"])) {
     if (addGapok($_POST) > 0) {
         echo
-        "
-       <script>
-        window.setTimeout(function() {
-            window.location.reload()
-            document.location.href = 'main.php?page=gaji_pokok&alert=1';
-            }, 1000);
-        </script>
-        ";
+        "<script>
+            document.location.href = 'main.php?page=gaji_pokok&alert=2';
+            </script>";
     } else {
         echo
-        "
-       <script>
-        window.setTimeout(function() {
-            window.location.reload()
+        "<script>
             document.location.href = 'main.php?page=gaji_pokok&alert=4';
-            }, 1000);
-        </script>
-        ";
+            </script>";
         mysqli_error($conn);
     }
 }
@@ -39,7 +33,7 @@ if (isset($_POST["submit"])) {
 <body>
     <section class="content-header">
         <h2>
-            <i class="fas fa-edit"></i> Menambah Gaji Pokok
+            <i class="fas fa-edit"></i> Edit Gaji Pokok
         </h2>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <ol class="breadcrumb">
@@ -58,15 +52,18 @@ if (isset($_POST["submit"])) {
                             <form action="" method="post">
                                 <div class="col-md-5">
                                     <div class="form-group">
+                                        <input type="hidden" class="form-control" name="id_gapok" id="id_gapok" required value="<?= $gp['id_gapok']; ?>">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="gapok">Gaji Pokok</label>
-                                        <input type="text" class="form-control" name="gaji_utama" id="gaji_utama" placeholder=" Masukan Nominal Gaji Pokok">
+                                        <input type="text" class="form-control" name="gaji_utama" id="gaji_utama" placeholder=" Masukan Nominal Gaji Pokok" value="<?= $gp["gaji_utama"]; ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label for="jabatan">Jabatan</label>
-                                        <select class="form-select" name="jabatan" id="jabatan" aria-label=" Floating label disabled select example">
-                                            <option value=""></option>
+                                        <select class="form-select" name="jabatan" id="jabatan" aria-label=" Floating label disabled select example" value="<?= $gp["jabatan"]; ?>">
+                                            <option value="<?= $gp["jabatan"]; ?>"><?= $gp["jabatan"]; ?></option>
                                             <option value="Manajer">Manajer</option>
                                             <option value="Supervisor">Supervisor</option>
                                             <option value="Staff">Staff</option>

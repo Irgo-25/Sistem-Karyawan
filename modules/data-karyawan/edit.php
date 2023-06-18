@@ -11,12 +11,12 @@ if (isset($_POST["submit"])) {
     if (edit($_POST) > 0) {
         echo
         "<script>
-            document.location.href = 'main.php?page=data-karyawan&alert=2';
+            document.location.href = 'main.php?page=data_karyawan&alert=2';
             </script>";
     } else {
         echo
         "<script>
-            document.location.href = 'main.php?page=data-karyawan&alert=4';
+            document.location.href = 'main.php?page=data_karyawan&alert=4';
             </script>";
         mysqli_error($conn);
     }
