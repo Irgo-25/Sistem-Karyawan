@@ -110,4 +110,5 @@ function deleteSalary($id_gapok)
 {
     global $conn;
     mysqli_query($conn, "DELETE FROM gaji_pokok WHERE id_gapok = $id_gapok");
+    return mysqli_affected_rows($conn);
 }

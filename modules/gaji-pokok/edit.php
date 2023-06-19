@@ -5,7 +5,7 @@ $id_gapok = $_GET["id_gapok"];
 $gp = view("SELECT * FROM gaji_pokok WHERE id_gapok=$id_gapok")[0];
 
 if (isset($_POST["submit"])) {
-    if (addGapok($_POST) > 0) {
+    if (editSalary($_POST) > 0) {
         echo
         "<script>
             document.location.href = 'main.php?page=gaji_pokok&alert=2';

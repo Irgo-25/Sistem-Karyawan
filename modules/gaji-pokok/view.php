@@ -14,6 +14,13 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script>
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function() {
+            $(this).remove()
+        });
+    }, 3000);
+</script>
 
 <body>
     <section class="content-header">
@@ -84,7 +91,7 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
                                         <tr>
                                             <td>Rp. <?= $gp["gaji_utama"]; ?></td>
                                             <td><?= $gp["jabatan"]; ?></td>
-                                            <td>
+                                            <td style="text-align: center;">
                                                 <a href="?page=edit_gapok&form=edit&id_gapok=<?= $gp["id_gapok"]; ?>" type="button" class="btn btn-warning">
                                                     <i class="fa-solid fa-pen-to-square"></i>
                                                 </a>

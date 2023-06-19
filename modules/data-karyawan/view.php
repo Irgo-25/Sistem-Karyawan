@@ -21,7 +21,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
         $(".alert").fadeTo(500, 0).slideUp(500, function() {
             $(this).remove();
         });
-    }, 5000);
+    }, 3000);
 </script>
 
 <body>
@@ -112,7 +112,7 @@ $karyawan = view("SELECT * FROM data_karyawan")
                                             <td><?= $row["jabatan"]; ?></td>
                                             <td><?= $row["alamat"]; ?></td>
                                             <td><?= $row["tanggal_masuk"]; ?></td>
-                                            <td class="center" width="120">
+                                            <td style="text-align: center;">
                                                 <!-- Tombol Edit -->
                                                 <a href="?page=edit_karyawan&form=edit&nik=<?= $row["nik"]; ?>" type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip Content">
                                                     <i class="fa-solid fa-pen-to-square"></i>
