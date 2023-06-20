@@ -51,14 +51,17 @@ $gapok = viewSalary("SELECT * FROM gaji_pokok"); ?>
             </div>";
         }
         // jika alert = 3
-        // tampilkan pesan Sukses "Gaji Pokok berhasil dihapus"
+        // tampilkan pesan Sukses "Gaji Pokok berhasil dihapus" 
         elseif ($_GET['alert'] == 3) {
             echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>
               Gaji Pokok berhasil dihapus.
             </div>";
-        } elseif ($_GET['alert'] == 4) {
+        }
+        // jika alert = 4
+        // tampilkan pesan Sukses "Gaji pokok dihapus"
+        elseif ($_GET['alert'] == 4) {
             echo "<div class='alert alert-success alert-dismissable'>
               <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
               <h4>  <i class='icon fa fa-check-circle'></i> Sukses!</h4>

@@ -44,7 +44,7 @@ if (isset($_POST["submit"])) {
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <ol class="breadcrumb">
                 <li><a href="?page=beranda"><i class="fa fa-home"></i> Beranda </a></li>
-                <li><a href="?page=gaji-pokok"> /Gaji Pokok </a></li>
+                <li><a href="?page=gaji_pokok"> /Gaji Pokok </a></li>
                 <li class="active"> /Tambah </li>
             </ol>
         </div>

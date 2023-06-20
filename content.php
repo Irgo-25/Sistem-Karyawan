@@ -30,6 +30,9 @@
   // menampilkan gaji karyawan
   elseif ($_GET["page"] == "gaji_karyawan") {
     include "modules/gaji-karyawan/view.php";
+    // menampilkan gaji karyawan
+  } elseif ($_GET["page"] == "add_gaji_karyawan") {
+    include "modules/gaji-karyawan/form.php";
     // menampilkan Laporan data karyawan
   } elseif ($_GET["page"] == "lap_data_karyawan") {
     include "modules/laporan/lap-data-karyawan.php";

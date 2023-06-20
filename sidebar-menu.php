@@ -100,7 +100,7 @@
             <?php } ?>
             <?php
             // jika Gaji Karyawan di pilih
-            if ($_GET["page"] == "gaji_karyawan") { ?>
+            if ($_GET["page"] == "gaji_karyawan" || $_GET["page"] == "add_gaji_karyawan") { ?>
               <li class="nav-item">
                 <a href="?page=gaji_karyawan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
