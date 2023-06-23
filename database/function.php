@@ -22,7 +22,7 @@ function add($data)
     $fullname = htmlspecialchars($data["nama"]);
     $age = htmlspecialchars($data["umur"]);
     $dept = htmlspecialchars($data["dept"]);
-    $jabatan = htmlspecialchars($data["Jabatan"]);
+    $jabatan = htmlspecialchars($data["jabatan"]);
     $address = htmlspecialchars($data["alamat"]);
     $entryDate = htmlspecialchars($data["tanggal_masuk"]);
     // query insert data
@@ -111,4 +111,15 @@ function deleteSalary($id_gapok)
     global $conn;
     mysqli_query($conn, "DELETE FROM gaji_pokok WHERE id_gapok = $id_gapok");
     return mysqli_affected_rows($conn);
+}
+// Menampilkan data gaji karyawan dari database
+function viewSalaryKaryawan($gajiKaryawan)
+{
+    global $conn;
+    $result = mysqli_query($conn, $gajiKaryawan);
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
+    return $rows;
 }

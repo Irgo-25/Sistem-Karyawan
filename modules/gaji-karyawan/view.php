@@ -1,3 +1,13 @@
+<?php
+include "database/function.php";
+
+$gajiKaryawan = viewSalaryKaryawan("SELECT  a.nama, a.jabatan, a.gaji_utama, a.tunjangan, a.total_gaji, b.nama, b.jabatan FROM gaji_karyawan AS a RIGHT JOIN data_karyawan AS b ON a.nama = a.nama")
+    or ('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,15 +77,31 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-body">
-                            <table id="table2" class="table table-bordered">
+                            <table id="table2" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th style="text-align: center;">No</th>
                                         <th style="text-align: center;">Nama</th>
+                                        <th style="text-align: center;">Jabatan</th>
                                         <th style="text-align: center;">Gaji Pokok</th>
                                         <th style="text-align: center;">Tunjangan</th>
                                         <th style="text-align: center;">Total Gaji</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                    <?php $No = 1; ?>
+                                    <?php foreach ($gajiKaryawan as $gk) : ?>
+                                        <tr>
+                                            <td><?= $No ?></td>
+                                            <td><?= $gk["nama"]; ?></td>
+                                            <td><?= $gk["jabatan"]; ?></td>
+                                            <td><?= $gk["gaji_utama"]; ?></td>
+                                            <td><?= $gk["tunjangan"]; ?></td>
+                                            <td><?= $gk["total_gaji"]; ?></td>
+                                        </tr>
+                                        <?php $No++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
                             </table>
                         </div>
                     </div>

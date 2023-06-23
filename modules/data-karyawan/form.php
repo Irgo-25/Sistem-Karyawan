@@ -8,14 +8,14 @@
             echo
             "
            <script>
-                document.location.href = 'main.php?page=data-karyawan&alert=1';
+                document.location.href = 'main.php?page=data_karyawan&alert=1';
             </script>
             ";
         } else {
             echo
             "
            <script>
-                document.location.href = 'main.php?page=data-karyawan&alert=4';
+                document.location.href = 'main.php?page=data_karyawan&alert=4';
             </script>
             ";
             mysqli_error($conn);

@@ -18,46 +18,56 @@ $karyawan = view("SELECT * FROM data_karyawan")
     <title>Data Karyawan</title>
 </head>
 
-<section>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <table id="table3" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>NIK</th>
-                                    <th>Nama</th>
-                                    <th>Umur</th>
-                                    <th>Departement</th>
-                                    <th>Jabatan</th>
-                                    <th>Alamat</th>
-                                    <th>Tanggal Masuk</th>
-                                </tr>
-                            </thead>
-                            <tbody class="border-dark">
-                                <?php $No = 1; ?>
-                                <?php foreach ($karyawan as $row) : ?>
+<body>
+    <section class="content-header">
+        <h3>Laporan Data Karyawan</h3>
+        <div class="col text-right">
+            <button class="btn btn-info justify-right" onclick="window.print();">
+                <i class="fa-solid fa-file-export"></i>
+                Print
+            </button>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <table id="table1" class="table table-bordered table-hover display nowrap" cellspacing="0" style="width:100%">
+                                <thead>
                                     <tr>
-                                        <td><?= $No ?></td>
-                                        <td><?= $row["nik"]; ?></td>
-                                        <td><?= $row["nama"]; ?></td>
-                                        <td><?= $row["umur"]; ?></td>
-                                        <td><?= $row["dept"]; ?></td>
-                                        <td><?= $row["jabatan"]; ?></td>
-                                        <td><?= $row["alamat"]; ?></td>
-                                        <td><?= $row["tanggal_masuk"]; ?></td>
+                                        <th>No</th>
+                                        <th>NIK</th>
+                                        <th>Nama</th>
+                                        <th>Umur</th>
+                                        <th>Departement</th>
+                                        <th>Jabatan</th>
+                                        <th>Alamat</th>
+                                        <th>Tanggal Masuk</th>
                                     </tr>
-                                    <?php $No++; ?>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody class="border-dark">
+                                    <?php $No = 1; ?>
+                                    <?php foreach ($karyawan as $row) : ?>
+                                        <tr>
+                                            <td><?= $No ?></td>
+                                            <td><?= $row["nik"]; ?></td>
+                                            <td><?= $row["nama"]; ?></td>
+                                            <td><?= $row["umur"]; ?></td>
+                                            <td><?= $row["dept"]; ?></td>
+                                            <td><?= $row["jabatan"]; ?></td>
+                                            <td><?= $row["alamat"]; ?></td>
+                                            <td><?= $row["tanggal_masuk"]; ?></td>
+                                        </tr>
+                                        <?php $No++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </body>

@@ -3,7 +3,7 @@
 require "database/function.php";
 // memanggil query data_karyawan
 $karyawan = view("SELECT * FROM data_karyawan")
-    or die('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
+    or ('Ada kesalahan pada query tampil Data karyawan:' . mysqli_error($conn));
 ?>
 
 <!DOCTYPE html>
@@ -134,3 +134,5 @@ $karyawan = view("SELECT * FROM data_karyawan")
         </div>
     </section>
 </body>
+
+</html>
