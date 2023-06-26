@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2023 at 11:19 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jun 26, 2023 at 06:20 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,7 +36,7 @@ CREATE TABLE `data_karyawan` (
   `jabatan` varchar(200) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `tanggal_masuk` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `data_karyawan`
@@ -45,7 +45,9 @@ CREATE TABLE `data_karyawan` (
 INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jabatan`, `alamat`, `tanggal_masuk`) VALUES
 (101, 46433213, 'Fafa', 22, 'IT', 'Supervisor', 'Giri', '2023-04-07'),
 (102, 5455663, 'Gaha', 23, 'HRD', 'Staff', 'Pekunden', '2023-03-03'),
-(103, 2598563, 'Irgo Satya Gemiwang', 22, 'IT', 'Staff', 'Pekunden', '2023-01-30');
+(103, 2598563, 'Irgo Satya Gemiwang', 22, 'IT', 'Staff', 'Pekunden', '2023-01-30'),
+(104, 56525323, 'Gaya', 22, 'Accounting', 'Manajer', 'Slamet', '2023-03-13'),
+(105, 7865633, 'Lana', 22, 'Accounting', 'Manajer', 'baris', '2023-02-27');
 
 -- --------------------------------------------------------
 
@@ -60,7 +62,7 @@ CREATE TABLE `gaji_karyawan` (
   `id_gapok` int(25) NOT NULL,
   `tunjangan` int(65) DEFAULT NULL,
   `total_gaji` int(65) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,7 @@ CREATE TABLE `gaji_pokok` (
   `id_gapok` int(25) NOT NULL,
   `gaji_utama` int(25) NOT NULL,
   `jabatan` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gaji_pokok`
@@ -93,7 +95,7 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user`
@@ -116,15 +118,14 @@ INSERT INTO `user` (`id_user`, `username`, `password`) VALUES
 -- Indexes for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  ADD PRIMARY KEY (`id_karyawan`),
-  ADD UNIQUE KEY `NIK` (`nik`);
+  ADD PRIMARY KEY (`id_karyawan`);
 
 --
 -- Indexes for table `gaji_karyawan`
 --
 ALTER TABLE `gaji_karyawan`
-  ADD PRIMARY KEY (`id_karyawan`),
-  ADD UNIQUE KEY `gaji_pokok` (`id_gapok`);
+  ADD KEY `id_karyawan` (`id_karyawan`),
+  ADD KEY `id_gapok` (`id_gapok`);
 
 --
 -- Indexes for table `gaji_pokok`
@@ -147,7 +148,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `gaji_pokok`
