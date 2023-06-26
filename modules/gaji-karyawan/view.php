@@ -1,9 +1,17 @@
 <?php
 include "database/function.php";
 
-$gajiKaryawan = viewSalaryKaryawan("SELECT * FROM gaji_karyawan 
-                                    INNER JOIN gaji_pokok ON gaji_pokok.id_gapok = gaji_karyawan.id_gapok
-                                    RIGHT JOIN data_karyawan ON gaji_karyawan.id_karyawan = data_karyawan.id_karyawan ")
+$gajiKaryawan = viewSalaryKaryawan("SELECT 
+dk.id_karyawan, 
+dk.nama, 
+dk.jabatan, 
+gp.gaji_utama, 
+gk.tunjangan, 
+gk.total_gaji 
+FROM data_karyawan dk 
+INNER JOIN gaji_karyawan gk ON dk.id_karyawan = gk.id_karyawan 
+INNER JOIN gaji_pokok gp ON gk.id_gapok = gp.id_gapok;
+                   ")
     or ('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
 
 ?>
