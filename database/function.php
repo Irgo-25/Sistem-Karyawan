@@ -123,3 +123,9 @@ function viewSalaryKaryawan($gajiKaryawan)
     }
     return $rows;
 }
+function editGajiKaryawan($salaryKaryawan)
+{
+    global $conn;
+    $id_karyawan = htmlspecialchars($salaryKaryawan["id_karyawan"]);
+    $nama = htmlspecialchars($salaryKaryawan["nama"]);
+}

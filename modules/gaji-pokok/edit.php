@@ -2,7 +2,7 @@
 include "database/function.php";
 $id_gapok = $_GET["id_gapok"];
 
-$gp = view("SELECT * FROM gaji_pokok WHERE id_gapok=$id_gapok")[0];
+$gp = viewSalary("SELECT * FROM gaji_pokok WHERE id_gapok=$id_gapok")[0];
 
 if (isset($_POST["submit"])) {
     if (editSalary($_POST) > 0) {

@@ -1,7 +1,9 @@
 <?php
 include "database/function.php";
 
-$gajiKaryawan = viewSalaryKaryawan("SELECT  a.nama, a.jabatan, a.gaji_utama, a.tunjangan, a.total_gaji, b.nama, b.jabatan FROM gaji_karyawan AS a RIGHT JOIN data_karyawan AS b ON a.nama = a.nama")
+$gajiKaryawan = viewSalaryKaryawan("SELECT * FROM gaji_karyawan 
+                                    INNER JOIN gaji_pokok ON gaji_pokok.id_gapok = gaji_karyawan.id_gapok
+                                    RIGHT JOIN data_karyawan ON gaji_karyawan.id_karyawan = data_karyawan.id_karyawan ")
     or ('Ada kesalahan pada query tampil Data karyawan: ' . mysqli_error($conn));
 
 ?>
@@ -66,9 +68,6 @@ $gajiKaryawan = viewSalaryKaryawan("SELECT  a.nama, a.jabatan, a.gaji_utama, a.t
         }
         ?>
         <h3>Gaji Karyawan</h3>
-        <div class="col text-right">
-            <a href="?page=add_gaji_karyawan" class="btn btn-primary justify-right" name="btn-gaji-karyawan">tambah</a>
-        </div>
     </section>
 
     <section>
@@ -86,6 +85,7 @@ $gajiKaryawan = viewSalaryKaryawan("SELECT  a.nama, a.jabatan, a.gaji_utama, a.t
                                         <th style="text-align: center;">Gaji Pokok</th>
                                         <th style="text-align: center;">Tunjangan</th>
                                         <th style="text-align: center;">Total Gaji</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -98,6 +98,11 @@ $gajiKaryawan = viewSalaryKaryawan("SELECT  a.nama, a.jabatan, a.gaji_utama, a.t
                                             <td><?= $gk["gaji_utama"]; ?></td>
                                             <td><?= $gk["tunjangan"]; ?></td>
                                             <td><?= $gk["total_gaji"]; ?></td>
+                                            <td style="text-align: center;">
+                                                <a href="?page=edit_gakar&form=edit&id_karyawan=<?= $gk["id_karyawan"]; ?>" type="button" class="btn btn-warning">
+                                                    <i class="fa-solid fa-pen-to-square"></i>
+                                                </a>
+                                            </td>
                                         </tr>
                                         <?php $No++; ?>
                                     <?php endforeach; ?>

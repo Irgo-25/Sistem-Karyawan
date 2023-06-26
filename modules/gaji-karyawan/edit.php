@@ -1,3 +1,13 @@
+<?php
+require "database/function.php";
+
+$id_karyawan = $_GET["id_karyawan"];
+
+$gk = viewSalaryKaryawan("SELECT * FROM gaji_karyawan WHERE id_karyawan = $id_karyawan")[0];
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,11 +38,10 @@
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="col-md-6">
-                                <label for="nama" class="form-label">Nama karyawan</label>
-                                <select class="form-select" name="nama" id="nama" data-placeholder="--Pilih Karyawan--">
-                                    <option value=""></option>
-
-                                </select>
+                                <input type="text" class="form-control" name="id_karyawan" id="id_karyawan" value="<?= $gk['id_karyawan']; ?>">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="nama" id="nama" value="<?= $gk['nama']; ?>">
                             </div>
                         </form>
                     </div>
