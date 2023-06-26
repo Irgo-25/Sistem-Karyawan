@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 05:32 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 26, 2023 at 11:19 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -36,22 +36,16 @@ CREATE TABLE `data_karyawan` (
   `jabatan` varchar(200) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `tanggal_masuk` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_karyawan`
 --
 
 INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jabatan`, `alamat`, `tanggal_masuk`) VALUES
-(63, 88888888, 'dani', 22, 'IT', 'Supervisor', 'Gajah', '2023-01-29'),
-(79, 2147483647, 'Sari', 21, 'Accounting', 'Manajer', 'baris', '2023-05-14'),
-(80, 12365, 'Zeze', 23, 'Accounting', 'Manajer', 'Slamet', '2023-05-14'),
-(90, 5254546, 'Babu', 23, 'IT', 'Supervisor', 'Gajah', '2023-03-15'),
-(91, 5454639, 'Caca', 22, 'IT', 'Supervisor', 'Gajah', '2023-04-05'),
-(92, 1236549, 'Gisel', 22, 'GA', 'Supervisor', 'baris', '2023-02-08'),
-(93, 20232563, 'Dandy', 52, 'Accounting', 'Manajer', 'baris', '2023-04-12'),
-(94, 20201363, 'stria', 25, 'Accounting', 'Manajer', 'baris', '2023-04-05'),
-(97, 4544565, 'trai', 23, 'Accounting', '', 'Gajah', '2023-03-14');
+(101, 46433213, 'Fafa', 22, 'IT', 'Supervisor', 'Giri', '2023-04-07'),
+(102, 5455663, 'Gaha', 23, 'HRD', 'Staff', 'Pekunden', '2023-03-03'),
+(103, 2598563, 'Irgo Satya Gemiwang', 22, 'IT', 'Staff', 'Pekunden', '2023-01-30');
 
 -- --------------------------------------------------------
 
@@ -61,11 +55,12 @@ INSERT INTO `data_karyawan` (`id_karyawan`, `nik`, `nama`, `umur`, `dept`, `jaba
 
 CREATE TABLE `gaji_karyawan` (
   `id_karyawan` int(20) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `gaji_pokok` int(65) NOT NULL,
-  `tunjangan` int(65) NOT NULL,
-  `total_gaji` int(65) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nama` varchar(100) NOT NULL,
+  `jabatan` varchar(50) NOT NULL,
+  `id_gapok` int(25) NOT NULL,
+  `tunjangan` int(65) DEFAULT NULL,
+  `total_gaji` int(65) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -77,7 +72,7 @@ CREATE TABLE `gaji_pokok` (
   `id_gapok` int(25) NOT NULL,
   `gaji_utama` int(25) NOT NULL,
   `jabatan` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `gaji_pokok`
@@ -98,7 +93,7 @@ CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -129,7 +124,7 @@ ALTER TABLE `data_karyawan`
 --
 ALTER TABLE `gaji_karyawan`
   ADD PRIMARY KEY (`id_karyawan`),
-  ADD UNIQUE KEY `gaji_pokok` (`gaji_pokok`);
+  ADD UNIQUE KEY `gaji_pokok` (`id_gapok`);
 
 --
 -- Indexes for table `gaji_pokok`
@@ -152,7 +147,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_karyawan`
 --
 ALTER TABLE `data_karyawan`
-  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id_karyawan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `gaji_pokok`
@@ -165,6 +160,17 @@ ALTER TABLE `gaji_pokok`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `gaji_karyawan`
+--
+ALTER TABLE `gaji_karyawan`
+  ADD CONSTRAINT `gaji_karyawan_ibfk_1` FOREIGN KEY (`id_karyawan`) REFERENCES `data_karyawan` (`id_karyawan`),
+  ADD CONSTRAINT `gaji_karyawan_ibfk_2` FOREIGN KEY (`id_gapok`) REFERENCES `gaji_pokok` (`id_gapok`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
