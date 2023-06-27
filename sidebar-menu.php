@@ -58,7 +58,7 @@
           </li>
         <?php
         }
-        // jika tidak, menu home tidak aktif
+        // jika tidak di pilih 
         else { ?>
           <li class="nav-item">
             <a href="?page=data_karyawan" class="nav-link">
@@ -69,7 +69,7 @@
             </a>
           </li>
         <?php } ?>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa-solid fa-sack-dollar fa-bounce"></i>
             <p>
@@ -119,7 +119,7 @@
               </li>
             <?php } ?>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="fa-solid fa-folder"></i>
